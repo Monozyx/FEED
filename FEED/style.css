@@ -1,0 +1,636 @@
+/* -------------------------------------------------- */
+/* GLOBAL RESET                                       */
+/* -------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    color: rgba(255,255,255,0.92);
+    overflow-x: hidden;
+
+    /* NEW GRADIENT BACKGROUND */
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #0f2027,
+        #203a43,
+        #2c5364
+    );
+}
+
+/* -------------------------------------------------- */
+/* CUSTOM FONT                                        */
+/* -------------------------------------------------- */
+@font-face {
+    font-family: 'Barnabey';
+    src: url('BARNABEY.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* -------------------------------------------------- */
+/* BACKGROUND VIDEO                                   */
+/* -------------------------------------------------- */
+.cat-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.75);
+    z-index: -1;
+}
+
+/* -------------------------------------------------- */
+/* NAVIGATION BAR                                     */
+/* -------------------------------------------------- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 25px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0));
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 45px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.85);
+    font-size: 1.15rem;
+    font-weight: 700;
+    transition: 0.25s ease;
+    display: inline-block;
+    transform-origin: center;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #8fd1b8;
+    transform: scale(1.12);
+}
+
+/* -------------------------------------------------- */
+/* CAT SECTION                                       */
+/* -------------------------------------------------- */
+.cat {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.cat-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 11%;
+}
+
+.main-title {
+    font-family: 'Barnabey', serif;
+    font-size: 8rem;
+    letter-spacing: 5px;
+    color: white;
+    text-shadow: 0px 4px 20px rgba(0,0,0,0.5);
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+}
+
+.feed-button {
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.feed-button:hover {
+    transform: scale(1.08);
+}
+
+.feed-button:hover .main-title {
+    color: #f9f9f9;
+    text-shadow: 0 0 35px rgb(184, 241, 212);
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* -------------------------------------------------- */
+/* ABOUT PAGE                                         */
+/* -------------------------------------------------- */
+.about-page {
+    padding-top: 120px;
+    height: 100vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.about-page .cat-video {
+    filter: brightness(0.75) blur(2px);
+}
+
+.about-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 80px 0 120px;
+}
+
+.about-container {
+    width: 70%;
+    max-width: 900px;
+    background: rgba(0,0,0,0.45);
+    border-radius: 20px;
+    padding: 40px 50px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.4);
+    opacity: 0;
+    animation: fadeSlideIn 1s ease forwards;
+}
+
+.about-title {
+    font-family: 'Barnabey';
+    font-size: 4rem;
+    text-align: center;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.about-subtitle {
+    margin-top: 40px;
+    font-size: 1.8rem;
+    color: #a8d0c3;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: rgba(255,255,255,0.9);
+}
+
+.about-list {
+    margin: 10px 0 30px 25px;
+}
+
+.about-list li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: rgba(255,255,255,0.9);
+}
+
+.about-text a {
+    color: #8fd1b8;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.about-text a:hover {
+    color: #b8ffe5;
+}
+
+@keyframes fadeSlideIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------------------------------------- */
+/* SUPPORT                                         */
+/* -------------------------------------------------- */
+.support-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Sections */
+.support-section {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+}
+
+.support-section h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.support-section p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Contact Form */
+.support-form label {
+    display: block;
+    font-size: 16px;
+    margin: 8px 0 4px;
+}
+
+.support-form input,
+.support-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.support-form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.support-form button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.support-form button:hover {
+    background-color: #357ABD;
+}
+
+/* FAQ */
+.faq-item {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-item h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .support-container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .support-section h2 {
+        font-size: 20px;
+    }
+
+    .support-form button {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+
+/* -------------------------------------------------- */
+/* FEED PAGE                                          */
+/* -------------------------------------------------- */
+.feed-menu-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 11%;
+}
+
+.feed-title {
+    font-family: 'Barnabey';
+    font-size: 6rem;
+    margin-bottom: 40px;
+    text-shadow: 0px 4px 20px rgba(0,0,0,0.5);
+    opacity: 0;
+    animation: fadeSlideIn 1s ease forwards;
+}
+
+.feed-options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.feed-box {
+    width: 380px;
+    padding: 20px 30px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    background: rgba(0,0,0,0.45);
+    border-radius: 18px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 25px rgba(0,0,0,0.25);
+    transition: 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 1.3s ease forwards;
+}
+
+.feed-box:hover {
+    transform: scale(1.05);
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 0 35px rgb(184,241,212);
+}
+
+.feed-box:nth-child(1) { animation-delay: 0.2s; }
+.feed-box:nth-child(2) { animation-delay: 0.4s; }
+.feed-box:nth-child(3) { animation-delay: 0.6s; }
+
+/* -------------------------------------------------- */
+/* SCHEDULER (SET TIME PAGE)                          */
+/* -------------------------------------------------- */
+.page-center {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.page-title {
+    font-family: 'Barnabey';
+    font-size: 5rem;
+    letter-spacing: 5px;
+    margin-bottom: 50px;
+}
+
+.page-button {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 15px 40px;
+    border-radius: 15px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    backdrop-filter: blur(4px);
+    color: white;
+}
+
+.page-button:hover {
+    background: rgba(255,255,255,0.25);
+    transform: scale(1.05);
+}
+
+.page-button.large {
+    width: 280px;
+    margin: 12px 0;
+}
+
+.page-card {
+    width: 350px;
+    background: rgba(0,0,0,0.45);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 40px rgba(0,0,0,0.4);
+}
+
+.page-card.wider {
+    width: 600px;
+}
+
+.page-input {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+}
+
+.page-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.page-table th,
+.page-table td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Day selector */
+.day-select {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.day-select label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    cursor: pointer;
+    user-select: none;
+    transition: transform .18s, background .18s, box-shadow .18s;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+}
+
+.day-select label:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.day-select input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    appearance: none;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    position: relative;
+    cursor: pointer;
+    accent-color: #8fd1b8;
+}
+
+.day-select input[type="checkbox"]:checked {
+    background: rgba(143,209,184,0.95);
+    border-color: rgba(143,209,184,0.95);
+}
+
+.day-select input[type="checkbox"]:checked::after {
+    content: "✓";
+    position: absolute;
+    left: 3px;
+    top: -1px;
+    font-size: 14px;
+    color: #06281f;
+}
+
+/* Schedule list fixes */
+.schedule-list {
+    margin-top: 15px;
+    background: rgba(255,255,255,0.15);
+    padding: 10px;
+    border-radius: 10px;
+    color: #0f0f0f !important;
+}
+
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.25);
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #0f0f0f !important;
+}
+
+.schedule-item button {
+    background: #ff4e4e;
+    border: none;
+    padding: 6px 10px;
+    color: white !important;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.schedule-item button:hover {
+    background: #d93636;
+}
+
+/* ================================
+   MOBILE RESPONSIVE (≤ 768px)
+================================ */
+/* -------- CLEAN MOBILE UI -------- */
+@media screen and (max-width: 768px) {
+
+    /* Header */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+    }
+
+    .logo {
+        width: 50px;
+        height: auto;
+    }
+
+    /* Nav */
+    nav ul {
+        display: flex;
+        gap: 12px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li a {
+        font-size: 15px;
+        color: white;
+        text-decoration: none;
+        padding: 6px 8px;
+    }
+
+    /* Page layout */
+    .page-center {
+        width: 92%;
+        margin: auto;
+        padding-top: 20px;
+    }
+
+    .page-title {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .page-card {
+        width: 100%;
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .page-input {
+        width: 100%;
+        font-size: 18px;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .page-button {
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        margin-top: 15px;
+    }
+
+    /* Table fix for History page */
+    .page-table {
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .page-table th, 
+    .page-table td {
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    /* Video background */
+    .cat-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: -1;
+        filter: brightness(60%);
+    }
+
+    /* Make everything readable */
+    body {
+        backdrop-filter: blur(2px);
+    }
+}
